@@ -44,7 +44,8 @@ void ttyraw(erasekey)
 
 	/* arrange for signals to be caught */
 	newsa.sa_handler = catchsig;
-	newsa.sa_flags = (SA_INTERRUPT|SA_NOMASK); /* not one-shot */
+	// newsa.sa_flags = (SA_INTERRUPT|SA_NOMASK); /* not one-shot */
+	newsa.sa_flags = SA_NOMASK; /* not one-shot */
 #if 0
 	newsa.sa_restorer = NULL;
 #endif
